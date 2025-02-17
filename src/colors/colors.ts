@@ -12,7 +12,7 @@ export const APP_COLORS: AppColor = {
   divider:'#E8E8EA',
   iconGray:'#979797',
   heartIcon:'#F50100',
-  button:"rgba(0, 0, 0, 0.84)",
+  button:"#242424",
 
   // linear gradient colors
   LGVarient1:'#989898',

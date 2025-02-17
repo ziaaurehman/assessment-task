@@ -1,9 +1,6 @@
 import { adaptiveFont, adaptiveSize, moderateScale } from './scaleUtils';
 
 export const FONT_SIZES = {
-  INPUT_FIELD_TITLE: adaptiveFont(14),
-  INPUT_FIELD_TEXT: adaptiveFont(14),
-
   TITLE: adaptiveFont(28),
   SUBTITLE: adaptiveFont(24),
   SECTION_TITLE: adaptiveFont(18),
@@ -30,26 +27,17 @@ export const SPACING = {
 };
 
 export const HEIGHTS = {
-  BUTTON_HEIGHT: adaptiveSize(44, true),
-  OUTLINE_BUTTON_HEIGHT: adaptiveSize(28, true),
-  MEDIUM_BUTTON_HEIGHT: adaptiveSize(21, true),
   LARGE_ICON_SIZE: adaptiveSize(36, true),
   MEDIUM_LARGE_ICON_SIZE: adaptiveSize(32, true),
   MEDIUM_ICON_SIZE: adaptiveSize(20, true),
-  SMALL_ICON_SIZE: adaptiveSize(16, true),
   TAB_INACTIVE: adaptiveSize(26,true),
   TAB_ACTIVE: adaptiveSize(28,true),
-  BODY_SIZE: adaptiveSize(14, true),
 };
-
-export const SERVICE_GRID_IMAGE_WIDTH = adaptiveSize(0.55);
-export const GRID_IMAGE_WIDTH = adaptiveSize(0.75);
 
 export const BORDERS = {
   DEFAULT_BORDER: moderateScale(1),
   BOLD_BORDER: moderateScale(2),
-  RADIO_SECLECTED_BORDER: moderateScale(3),
-  RADIO_SELECTED_CIRCLE_BORDER: moderateScale(4),
+  RADIO_SELECTED_BORDER: moderateScale(3),
 };
 
 export const RADIUS = {
@@ -61,23 +49,8 @@ export const RADIUS = {
   FULL: moderateScale(100),
 };
 
-export const SHADOW_OFFSET = {
-  REGULAR_HEIGHT: moderateScale(4),
-  REGULAR_WIDTH: moderateScale(4),
-};
-
-export const SHADOW_OPACITY = {
-  REGULAR: 0.3,
-};
-
-export const PRESSABLE_OPACITY = {
-  ACTIVE: 0.6,
-};
 
 export const FONT_WEIGHTS: Record<string, FontWeight> = {
-  THIN: '100',
-  EXTRA_LIGHT: '200',
-  LIGHT: '300',
   REGULAR: '400',
   MEDIUM: '500',
   SEMI_BOLD: '600',

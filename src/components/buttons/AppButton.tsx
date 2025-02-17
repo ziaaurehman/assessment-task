@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import {
-  ActivityIndicator,
   Platform,
   Pressable,
   StyleProp,
@@ -8,22 +7,18 @@ import {
   ViewStyle,
 } from 'react-native';
 import Body from '@components/typography/Body';
-import { BORDERS, FONT_SIZES, RADIUS, SPACING } from '@utils/constants';
+import {  RADIUS, SPACING } from '@utils/constants';
 import { APP_COLORS } from '../../colors/colors';
 
 export type AppButtonType =
   | 'primary'
 
 type AppButtonProps = {
-  icon?: ReactNode;
   onPress: () => void;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
   buttonType?: AppButtonType;
   title: string;
-  accessibilityLabel?: string;
-  loading?: boolean;
-  disabled?: boolean;
   fullWidth?: boolean;
 };
 
@@ -32,11 +27,7 @@ const AppButton = ({
   style,
   textStyle,
   buttonType = 'primary',
-  disabled,
-  icon,
-  loading,
   title,
-  accessibilityLabel,
   fullWidth,
 }: AppButtonProps) => {
   const baseButtonStyle: ViewStyle = {
@@ -47,6 +38,8 @@ const AppButton = ({
     paddingHorizontal: SPACING.MEDIUM,
     paddingVertical: SPACING.SMALL,
     gap: SPACING.EXTRA_SMALL,
+    borderWidth:1,
+    borderColor:'#000',
     ...(fullWidth && { width: '100%' }),
     ...Platform.select({
       ios: {
@@ -56,7 +49,7 @@ const AppButton = ({
         shadowRadius: 2.63,  
       },
       android: {
-        elevation: 4,  
+        elevation: 6,  
       },
     }),
   };
@@ -75,26 +68,16 @@ const AppButton = ({
 
   return (
     <Pressable
-      disabled={disabled}
       onPress={onPress}
       style={({ pressed }) => [
-        { opacity: pressed || disabled ? 0.4 : 1 },
         baseButtonStyle,
         buttonTypeStyles[buttonType].buttonStyle,
         style,
       ]}
-      accessibilityLabel={accessibilityLabel ?? title}
     >
-      {loading  ? (
-        <ActivityIndicator size='small' color={APP_COLORS.white} />
-      ) : (
-        <>
-          {icon}
-          <Body fontWeight='semibold' style={[buttonTypeStyles[buttonType].textStyle, textStyle]}>
-            {title}
-          </Body>
-        </>
-      )}
+      <Body fontWeight='semibold' style={[buttonTypeStyles[buttonType].textStyle, textStyle]}>
+        {title}
+      </Body>
     </Pressable>
   );
 };

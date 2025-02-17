@@ -1,8 +1,6 @@
 import React, { forwardRef, PropsWithChildren } from 'react';
 import { StyleProp, StyleSheet, TextStyle } from 'react-native';
 import Animated from 'react-native-reanimated';
-// import { ThemeColor, Tone } from '@theme/interfaces/theme.color';
-// import { useTheme } from '@theme/ThemeProvider';
 import { FONT_FAMILY, FONT_WEIGHTS } from '@utils/constants';
 import { APP_COLORS } from '../../colors/colors';
 import { AppColor } from '../../colors/AppColor';
@@ -49,11 +47,6 @@ const BaseText = forwardRef<Animated.Text, BaseTextProps>(
     const toneStyle: Record<TextTone, TextStyle> = {
       default: { color: colors.textColor },
       placeholder: { color: colors.grayText },
-      // info: { color: colors.infoTextColor },
-      // warning: { color: colors.warningTextColor },
-      // critical: { color: colors.criticalTextColor },
-      // success: { color: colors.successTextColor },
-      // 'input-critical': { color: colors.inputCritical },
       white: { color: colors.white },
     };
 

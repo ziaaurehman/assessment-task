@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, Platform, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Column from '@components/layout/Column'
 import { HEIGHTS, RADIUS, SPACING } from '@utils/constants'
@@ -36,29 +36,29 @@ export default function TryOnImages() {
 
   return (
     <Column style={styles.container} >
-          <LinearGradient
-            colors={LGColorVariants}
-            start={{ x: 0.5, y: 0 }}
-            end={{ x: 0.5, y: 1 }}
-            style={styles.lgContainer}
-          >
-            <Image
-              source={tryImage}
-              style={styles.image}
-            />
-          </LinearGradient>
-          <Gap height={SPACING.SEMI_MEDIUM} />
-          <Row >
-                <ClickableIcon icon={ICONS.HEART} iconStyle={styles.heartIcon} size={HEIGHTS.MEDIUM_LARGE_ICON_SIZE} />
-                <Gap width={SPACING.MEDIUM}  />
-                <ClickableIcon icon={ICONS.SEND} iconStyle={styles.otherIcon} size={HEIGHTS.MEDIUM_LARGE_ICON_SIZE} />
-                <Gap width={SPACING.MEDIUM} />
-                <ClickableIcon icon={ICONS.UPLOAD} iconStyle={styles.otherIcon} size={HEIGHTS.MEDIUM_LARGE_ICON_SIZE} />
-                <Gap width={SPACING.MEDIUM} />
-                <ClickableIcon icon={ICONS.DOWNLOAD} iconStyle={styles.otherIcon} size={HEIGHTS.MEDIUM_LARGE_ICON_SIZE} />
-          </Row>
-          <Gap height={SPACING.SEMI_MEDIUM} />
-      </Column>
+      <LinearGradient
+        colors={LGColorVariants}
+        start={{ x: 0.5, y: 0 }}
+        end={{ x: 0.5, y: 1 }}
+        style={styles.lgContainer}
+      >
+        <Image
+          source={tryImage}
+          style={styles.image}
+        />
+      </LinearGradient>
+      <Gap height={SPACING.SEMI_MEDIUM} />
+      <Row >
+            <ClickableIcon icon={ICONS.HEART} iconStyle={styles.heartIcon} size={HEIGHTS.MEDIUM_LARGE_ICON_SIZE} />
+            <Gap width={SPACING.MEDIUM}  />
+            <ClickableIcon icon={ICONS.SEND} iconStyle={styles.otherIcon} size={HEIGHTS.MEDIUM_LARGE_ICON_SIZE} />
+            <Gap width={SPACING.MEDIUM} />
+            <ClickableIcon icon={ICONS.UPLOAD} iconStyle={styles.otherIcon} size={HEIGHTS.MEDIUM_LARGE_ICON_SIZE} />
+            <Gap width={SPACING.MEDIUM} />
+            <ClickableIcon icon={ICONS.DOWNLOAD} iconStyle={styles.otherIcon} size={HEIGHTS.MEDIUM_LARGE_ICON_SIZE} />
+      </Row>
+      <Gap height={SPACING.SEMI_MEDIUM} />
+    </Column>
   )
 }
 
@@ -73,11 +73,11 @@ const createStyles = (colors:AppColor) => StyleSheet.create({
     },
     lgContainer:{
         width:'65%',
-        height:adaptiveSize(370,true),
+        height:adaptiveSize(380,true),
         borderRadius:6,
         padding:SPACING.TINY
     },
-    image:{width:'97%',height:'98%',borderRadius:6},
+    image:{width:Platform.OS == 'android'? '99%' :'97%',height:Platform.OS == 'android'? '99%':'98%',borderRadius:6},
     heartIcon:{
         color:colors.heartIcon
     },
