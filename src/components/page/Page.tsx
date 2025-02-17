@@ -38,7 +38,6 @@ const Page = ({
   fixedBottomSeparator = true,
   fixedBottomComponent,
 }: PageProps) => {
-  // const { colors } = useTheme();
   const colors = APP_COLORS
   const styles = createStyles(colors, !!noHorizontalPadding);
   const insets = useSafeAreaInsets();
@@ -115,7 +114,6 @@ const createStyles = (colors: AppColor, noHorizontalPadding: boolean) =>
     },
     fixedBottomComponentStyle: {
       borderTopWidth: BORDERS.DEFAULT_BORDER,
-      // borderTopColor: colors.placeholderTextColor,
       padding: SPACING.SMALL,
       justifyContent: 'center',
       alignItems: 'center',
