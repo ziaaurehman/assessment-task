@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import {
   ActivityIndicator,
+  Platform,
   Pressable,
   StyleProp,
   TextStyle,
@@ -8,7 +9,7 @@ import {
 } from 'react-native';
 import Body from '@components/typography/Body';
 import { BORDERS, FONT_SIZES, RADIUS, SPACING } from '@utils/constants';
-import { APP_COLORS } from 'colors/colors';
+import { APP_COLORS } from '../../colors/colors';
 
 export type AppButtonType =
   | 'primary'
@@ -38,7 +39,6 @@ const AppButton = ({
   accessibilityLabel,
   fullWidth,
 }: AppButtonProps) => {
-  // const { colors } = useTheme();
   const baseButtonStyle: ViewStyle = {
     borderRadius: RADIUS.SMALL,
     flexDirection: 'row',
@@ -48,6 +48,17 @@ const AppButton = ({
     paddingVertical: SPACING.SMALL,
     gap: SPACING.EXTRA_SMALL,
     ...(fullWidth && { width: '100%' }),
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2.63 },  
+        shadowOpacity: 0.25,
+        shadowRadius: 2.63,  
+      },
+      android: {
+        elevation: 4,  
+      },
+    }),
   };
 
   const buttonTypeStyles: Record<
@@ -56,11 +67,10 @@ const AppButton = ({
   > = {
     primary: {
       buttonStyle: {
-        backgroundColor: APP_COLORS.primaryColor,
+        backgroundColor: APP_COLORS.button,
       },
       textStyle: { color: APP_COLORS.white },
     },
-    // add additional types if needed
   };
 
   return (
@@ -80,7 +90,7 @@ const AppButton = ({
       ) : (
         <>
           {icon}
-          <Body style={[buttonTypeStyles[buttonType].textStyle, textStyle]}>
+          <Body fontWeight='semibold' style={[buttonTypeStyles[buttonType].textStyle, textStyle]}>
             {title}
           </Body>
         </>

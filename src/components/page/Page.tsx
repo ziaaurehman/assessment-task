@@ -8,48 +8,33 @@ import {
   ActivityIndicator,
   ScrollView,
 } from 'react-native';
-// import { LIGHT_COLORS } from '@theme/colors';
-// import { ThemeColor } from '@theme/interfaces/theme.color';
-// import { useTheme } from '@theme/ThemeProvider';
 import { BORDERS, SPACING } from '@utils/constants';
 import React, { PropsWithChildren } from 'react';
-
-import PageHeader, { PageHeaderMenu } from './PageHeader';
+import PageHeader from './PageHeader';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import AppButton, { AppButtonType } from '@components/buttons/AppButton';
-import { APP_COLORS } from 'colors/colors';
-import { AppColor } from 'colors/AppColor';
-// import IgnorePagePadding from '@components/layout/IgnorePagePadding';
-// import Margin from '@components/layout/Margin';
+import { APP_COLORS } from '../../colors/colors';
+import { AppColor } from '../../colors/AppColor';
 
 
 type PageProps = PropsWithChildren<{
-  title?: string;
-  subtitle?: string;
   noHorizontalPadding?: boolean;
-  goBack?: () => void;
   style?: StyleProp<ViewStyle>;
   contentStyle?: StyleProp<ViewStyle>;
   isLoading?: boolean;
   fullPageContent?: boolean;
   notScrollable?: boolean;
-  headerMenu?: PageHeaderMenu[];
   fixedBottomSeparator?: boolean;
   fixedBottomComponent?: React.ReactNode;
 }>;
 
 const Page = ({
-  title,
-  subtitle,
   noHorizontalPadding,
-  goBack,
   style,
   notScrollable,
   contentStyle,
   isLoading,
   fullPageContent,
   children,
-  headerMenu,
   fixedBottomSeparator = true,
   fixedBottomComponent,
 }: PageProps) => {
@@ -68,7 +53,6 @@ const Page = ({
         <SafeAreaView
           style={[styles.loadingStyle, styles.fullPageContentStyle]}
         >
-          {/* TODO: Use Lottie  */}
           <ActivityIndicator color={colors.textColor} />
         </SafeAreaView>
       ) : (
@@ -78,16 +62,7 @@ const Page = ({
             { marginTop: Math.min(insets.top, SPACING.SMALL) },
           ]}
         >
-          {/* <Margin
-            horizontal={noHorizontalPadding ? SPACING.PAGE_HORIZONTAL : 0}
-          > */}
-            <PageHeader
-              title={title}
-              subtitle={subtitle}
-              goBack={goBack}
-              menu={headerMenu}
-            />
-          {/* </Margin> */}
+          <PageHeader/>
           {notScrollable ? (
             <View
               style={[

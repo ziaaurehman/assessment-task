@@ -5,7 +5,7 @@ export const FONT_SIZES = {
   INPUT_FIELD_TEXT: adaptiveFont(14),
 
   TITLE: adaptiveFont(28),
-  SUBTITLE: adaptiveFont(14),
+  SUBTITLE: adaptiveFont(24),
   SECTION_TITLE: adaptiveFont(18),
   SECTION_TITLE_LARGE: adaptiveFont(20),
   SECTION_TITLE_SMALL: adaptiveFont(16),
@@ -19,23 +19,17 @@ export const FONT_SIZES = {
 export const SPACING = {
   PAGE_HORIZONTAL: moderateScale(16),
   PAGE_VERTICAL: moderateScale(16),
-  CARD_HORIZONTAL: moderateScale(16),
-  CARD_VERTICAL: moderateScale(16),
-  INPUT_HORIZONTAL: moderateScale(20),
-  INPUT_VERTICAL: moderateScale(16),
-  TAB_HORIZONTAL: moderateScale(16),
   LARGE: moderateScale(40),
-  SEMI_LARGE: moderateScale(30),
+  SEMI_LARGE: moderateScale(28),
   MEDIUM: moderateScale(20),
   MEDIUM_PLUS: moderateScale(24),
   SEMI_MEDIUM: moderateScale(16),
   SMALL: moderateScale(12),
-  EXTRA_SMALL: moderateScale(8),
+  EXTRA_SMALL: moderateScale(10),
   TINY: moderateScale(4),
 };
 
 export const HEIGHTS = {
-  INPUT_FIELD_HEIGHT: adaptiveSize(48, true),
   BUTTON_HEIGHT: adaptiveSize(44, true),
   OUTLINE_BUTTON_HEIGHT: adaptiveSize(28, true),
   MEDIUM_BUTTON_HEIGHT: adaptiveSize(21, true),
@@ -43,22 +37,9 @@ export const HEIGHTS = {
   MEDIUM_LARGE_ICON_SIZE: adaptiveSize(32, true),
   MEDIUM_ICON_SIZE: adaptiveSize(20, true),
   SMALL_ICON_SIZE: adaptiveSize(16, true),
+  TAB_INACTIVE: adaptiveSize(26,true),
+  TAB_ACTIVE: adaptiveSize(28,true),
   BODY_SIZE: adaptiveSize(14, true),
-  TAB_HEIGHT: adaptiveSize(56, true),
-  MEDIUM_PROFILE_SIZE: adaptiveSize(32, true),
-  LARGE_PROFILE_SIZE: adaptiveSize(48, true),
-  TINY_ICON_SIZE: adaptiveSize(12, true),
-  CONFIR_CODE_SIZE: adaptiveSize(59, true),
-
-  FIXED_BUTTON_HEIGHT: adaptiveSize(64, true),
-
-  AGE_CONTAINER_SIZE: adaptiveSize(36, true),
-
-  SUMMARY_IMAGE_SIZE: adaptiveSize(84, true),
-  ITEM_SIZE_84: adaptiveSize(84, true),
-  ITEM_SIZE_30: adaptiveSize(30, true),
-  ITEM_SIZE_35: adaptiveSize(35, true),
-  ITEM_SIZE_64: adaptiveSize(64, true),
 };
 
 export const SERVICE_GRID_IMAGE_WIDTH = adaptiveSize(0.55);

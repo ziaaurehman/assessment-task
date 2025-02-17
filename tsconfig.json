@@ -14,6 +14,8 @@
       "@screens/*": ["screens/*"],
       "@utils/*": ["utils/*"],
       "@icons/*": ["utils/icons/*"],
+      "@colors": ["colors/*"],
+
     }
   }
 }

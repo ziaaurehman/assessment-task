@@ -1,89 +1,67 @@
 import { HEIGHTS, SPACING } from '@utils/constants';
 import React from 'react';
-import { View, StyleSheet, Pressable } from 'react-native';
-import ClickableIcon from '../buttons/ClickableIcon';
+import { StyleSheet } from 'react-native';
 import ICONS from '@utils/icons';
 import Title from '../typography/Title';
-import Subtitle from '../typography/SubTitle';
-import SectionTitle from '@components/typography/SectionTitle';
 import Row from '@components/layout/Row';
-import Gap from '@components/layout/Gap';
-import { APP_COLORS } from 'colors/colors';
-// import { useTheme } from '@theme/ThemeProvider';
+import { APP_COLORS } from '../../colors/colors';
+import Column from '@components/layout/Column';
+import AppIcon from '@components/icons/AppIcon';
+import Caption from '@components/typography/Caption';
+import { adaptiveFont, adaptiveSize } from '@utils/scaleUtils';
+import { AppColor } from '../../colors/AppColor';
 
-export type PageHeaderAlignment = 'flex-start' | 'center' | 'flex-end';
 
-export type PageHeaderMenu = {
-  children: string | React.ComponentType<any> | React.ReactNode;
-  title?: string;
-  onPress?: () => void;
-};
-
-type PageHeaderProps = {
-  title?: string;
-  subtitle?: string;
-  goBack?: () => void;
-  menu?: PageHeaderMenu[];
-};
-
-const PageHeader = ({ title, subtitle, goBack, menu }: PageHeaderProps) => {
-  const finalTitle = title ?? '';
+const PageHeader = () => {
   const  colors  = APP_COLORS;
-
+  const styles = createStyles(colors)
   return (
-    <>
-      <Row style={{ gap: SPACING.SMALL }}>
-        {goBack && (
-          <ClickableIcon
-            icon={ICONS.RIGHT}
-            onPress={goBack}
-            size={HEIGHTS.MEDIUM_ICON_SIZE}
-          />
-        )}
-        {goBack ? (
-          <SectionTitle>{finalTitle}</SectionTitle>
-        ) : (
-          <Title>{finalTitle}</Title>
-        )}
-        <Gap fillRemainingSpace />
-        <Row style={{ gap: SPACING.SMALL }}>
-          {menu?.slice(0, 3)?.map((item,index) => {
-            let Children = item?.children;
-            let key = `key-${index}`
-            if (typeof Children === 'string') {
-              return (
-                <ClickableIcon
-                  key={key}
-                  icon={Children}
-                  onPress={item.onPress}
-                />
-              );
-            }
-            if(typeof Children === 'function') {
-              return (
-                Children && <Pressable key={key} onPress={item.onPress} ><Children color={colors.textColor} /></Pressable>
-              );
-            }
-            if (React.isValidElement(Children)) {
-              return (
-                <View key={key} >
-                  {Children}
-                </View>
-              );
-            }
-          })}
+      <Row style={styles.header} >
+        <Row style={styles.rowContainer} >
+          <AppIcon icon={ICONS.MENU} size={HEIGHTS.TAB_ACTIVE} />
+          <AppIcon icon={ICONS.BELL} size={HEIGHTS.TAB_ACTIVE} />
+        </Row>
+        <Column style={styles.centerContainer} >
+          <Title>STYLEY</Title>
+        </Column>
+        <Row style={styles.rightRowContainer} >
+          <AppIcon icon={ICONS.SEARCH} size={HEIGHTS.TAB_ACTIVE} />
+          <Row style={styles.rightContainer} >
+              <AppIcon icon={ICONS.CIRCLES} size={adaptiveFont(9)} color={colors.white} />
+              <Caption style={{color:colors.white}} >7607</Caption>
+          </Row>
         </Row>
       </Row>
-      {subtitle && (
-        <>
-          <Gap />
-          <Subtitle>{subtitle}</Subtitle>
-        </>
-      )}
-      <Gap height={SPACING.MEDIUM} />
-    </>
   );
 };
 
 export default PageHeader;
+
+const createStyles = (colors:AppColor) => StyleSheet.create({
+  rowContainer:{
+    width:'27%',
+    paddingRight:SPACING.EXTRA_SMALL + 2,
+    justifyContent:'space-between'
+  },
+  rightRowContainer:{
+    flex:2,
+    justifyContent:'space-between'
+  },
+  centerContainer:{flex:3.5,alignItems:'center'},
+  header:{
+    justifyContent:'space-between',
+    alignItems:'center',
+    paddingHorizontal:SPACING.TINY,
+    paddingBottom:SPACING.EXTRA_SMALL,
+    borderBottomWidth:0.3,
+  },
+  rightContainer:{
+    width:adaptiveSize(55),
+    paddingHorizontal:SPACING.TINY,
+    paddingVertical:adaptiveSize(6),
+    backgroundColor:colors.textColor,
+    alignItems:'center',
+    justifyContent:'space-between'
+  }
+})
 

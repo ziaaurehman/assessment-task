@@ -8,7 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Animated from 'react-native-reanimated';
 import { HEIGHTS } from '@utils/constants';
 import ICON_LIBRARIES, { IconLibraryType } from '@utils/iconLibraries';
-import { APP_COLORS } from 'colors/colors';
+import { APP_COLORS } from '../../colors/colors';
 
 type AppIconProps = {
   icon: string | ImageSourcePropType;
@@ -45,7 +45,7 @@ const AppIcon = ({
         <IconComponent
           name={iconName}
           size={size}
-          style={[{ color: color ?? APP_COLORS.secondaryColor }, style]}
+          style={[{ color: color ?? APP_COLORS.textColor }, style]}
         />
       )}
     </Animated.View>
