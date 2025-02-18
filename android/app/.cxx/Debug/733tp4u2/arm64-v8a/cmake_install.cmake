@@ -44,7 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/macbook/Documents/GitHub/assessment-task/android/app/.cxx/Debug/733tp4u2/arm64-v8a/RNCSlider_autolinked_build/cmake_install.cmake")
   include("/Users/macbook/Documents/GitHub/assessment-task/android/app/.cxx/Debug/733tp4u2/arm64-v8a/rngesturehandler_codegen_autolinked_build/cmake_install.cmake")
   include("/Users/macbook/Documents/GitHub/assessment-task/android/app/.cxx/Debug/733tp4u2/arm64-v8a/rnreanimated_autolinked_build/cmake_install.cmake")
   include("/Users/macbook/Documents/GitHub/assessment-task/android/app/.cxx/Debug/733tp4u2/arm64-v8a/safeareacontext_autolinked_build/cmake_install.cmake")

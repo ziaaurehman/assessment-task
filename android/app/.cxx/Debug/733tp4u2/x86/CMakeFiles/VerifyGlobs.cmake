@@ -12,51 +12,6 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "/Users/macbook/Documents/GitHub/assessment-task/android/app/.cxx/Debug/733tp4u2/x86/CMakeFiles/cmake.verify_globs")
 endif()
 
-# LIB_CUSTOM_SRCS at /Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/CMakeLists.txt:21 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/*.cpp")
-set(OLD_GLOB
-  )
-if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
-  message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Users/macbook/Documents/GitHub/assessment-task/android/app/.cxx/Debug/733tp4u2/x86/CMakeFiles/cmake.verify_globs")
-endif()
-
-# LIB_CUSTOM_SRCS at /Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/CMakeLists.txt:21 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../../common/cpp/react/renderer/components/RNCSlider/*.cpp")
-set(OLD_GLOB
-  "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../../common/cpp/react/renderer/components/RNCSlider/RNCSliderMeasurementsManager.cpp"
-  "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../../common/cpp/react/renderer/components/RNCSlider/RNCSliderShadowNode.cpp"
-  )
-if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
-  message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Users/macbook/Documents/GitHub/assessment-task/android/app/.cxx/Debug/733tp4u2/x86/CMakeFiles/cmake.verify_globs")
-endif()
-
-# LIB_CODEGEN_SRCS at /Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/CMakeLists.txt:22 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../build/generated/source/codegen/jni/*.cpp")
-set(OLD_GLOB
-  "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../build/generated/source/codegen/jni/RNCSlider-generated.cpp"
-  )
-if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
-  message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Users/macbook/Documents/GitHub/assessment-task/android/app/.cxx/Debug/733tp4u2/x86/CMakeFiles/cmake.verify_globs")
-endif()
-
-# LIB_CODEGEN_SRCS at /Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/CMakeLists.txt:22 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/RNCSlider/*.cpp")
-set(OLD_GLOB
-  "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/RNCSlider/ComponentDescriptors.cpp"
-  "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/RNCSlider/EventEmitters.cpp"
-  "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/RNCSlider/Props.cpp"
-  "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/RNCSlider/RNCSliderJSI-generated.cpp"
-  "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/RNCSlider/ShadowNodes.cpp"
-  "/Users/macbook/Documents/GitHub/assessment-task/node_modules/@react-native-community/slider/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/RNCSlider/States.cpp"
-  )
-if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
-  message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Users/macbook/Documents/GitHub/assessment-task/android/app/.cxx/Debug/733tp4u2/x86/CMakeFiles/cmake.verify_globs")
-endif()
-
 # react_codegen_SRCS at /Users/macbook/Documents/GitHub/assessment-task/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/macbook/Documents/GitHub/assessment-task/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/*.cpp")
 set(OLD_GLOB
